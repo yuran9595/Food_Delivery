@@ -19,7 +19,6 @@ public class UserController {
 
     @GetMapping("/")
     public List<User> userList(Principal principal){
-
         return userService.userList();
     }
 }

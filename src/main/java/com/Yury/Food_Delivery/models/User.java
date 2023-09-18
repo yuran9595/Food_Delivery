@@ -34,11 +34,6 @@ public class User implements UserDetails {
     private Set<UserRole> userRoles = new HashSet<>();
     @Column(name = "active")
     private Boolean active;
-    @Column(name = "birthday")
-    private LocalDate birthday;
-    @Column(name = "gender")
-    @Enumerated(EnumType.STRING)
-    private UserGender gender;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     List<UserConnections> userConnections = new ArrayList<>();
 

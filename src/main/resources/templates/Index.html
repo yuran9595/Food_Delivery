@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="text">Страница</p>
+<button onclick="changeColor('red');">Красный цвет</button>
+<button onclick="changeColor('blue');">Синий цвет</button>
+<button onclick="changeColor('yellow');">Желтый цвет</button>
+<br>
+<br>
+<br>
+<form id="myForm" method="post" onsubmit="validate()" action="">
+    <input type="text" id="textId" name="myName">
+    <input type="submit" value="Button">
+</form>
+<script>
+    function changeColor(color){
+    var element = document.getElementById("text");
+    element.style.color = color;
+    }
+    function validate(){
+      var element = document.getElementById("textId").value;
+      console.log(element);
+      if(element==""){
+      alert("Empty")
+      }
+    }
+</script>
+</body>
+</html>
