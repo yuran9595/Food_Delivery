@@ -20,7 +20,6 @@ import java.util.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 
 public class User implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
@@ -37,8 +36,6 @@ public class User implements UserDetails {
     private Boolean active;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     List<UserConnections> userConnections = new ArrayList<>();
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return userRoles;
