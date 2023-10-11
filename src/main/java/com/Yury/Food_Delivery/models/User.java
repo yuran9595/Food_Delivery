@@ -34,8 +34,10 @@ public class User implements UserDetails {
     private Set<UserRole> userRoles = new HashSet<>();
     @Column(name = "active")
     private Boolean active;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     List<UserConnections> userConnections = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    List<Basket> baskets = new ArrayList<>();
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return userRoles;

@@ -35,7 +35,6 @@ public class RegistrationController {
         }
         return ResponseEntity.ok(userService.createUser(userDTO));
     }
-
     private void validation(UserDTORequest userDTO, BindingResult bindingResult, Map<String, String> errorMapForFront) {
         userDTOValidation.validate(userDTO, bindingResult);
         if (bindingResult.hasErrors()){

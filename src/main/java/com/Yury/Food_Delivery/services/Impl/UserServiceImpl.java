@@ -62,7 +62,6 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
-    // todo Model: -> Product(поля какие), Category(), subCategory(), категорию только админ может добавлять.
 
 
 }
