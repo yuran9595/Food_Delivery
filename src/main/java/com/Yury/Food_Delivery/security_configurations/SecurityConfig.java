@@ -65,7 +65,6 @@ public class SecurityConfig {
         authenticationProvider.setUserDetailsService(customUserDetailsService);
         return authenticationProvider;
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
