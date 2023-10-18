@@ -3,6 +3,7 @@ package com.Yury.Food_Delivery.controllers;
 import com.Yury.Food_Delivery.models.User;
 import com.Yury.Food_Delivery.services.Impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class UserController {
 
     private final UserServiceImpl userService;
 
+    @CrossOrigin("http://localhost:3000")
     @GetMapping("/getUserList")
     public List<User> userList(Principal principal){
         return userService.userList();
