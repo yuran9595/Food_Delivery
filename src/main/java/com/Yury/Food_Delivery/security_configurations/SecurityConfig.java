@@ -32,7 +32,7 @@ public class SecurityConfig {
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .cors().disable()
+                .cors().and()
                 .authorizeRequests()
                 .antMatchers( "/api/v1/**").authenticated()
                 .antMatchers("/api/v1/admin/**").hasRole("ADMIN")

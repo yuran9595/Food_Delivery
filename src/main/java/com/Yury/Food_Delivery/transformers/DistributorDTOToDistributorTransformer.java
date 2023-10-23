@@ -10,7 +10,7 @@ public class DistributorDTOToDistributorTransformer extends Transformer<Distribu
     @Override
     public Distributor transform(DistributorDTORequest distributorDTO) {
         Distributor distributor = new Distributor();
-        distributor.setName(distributorDTO.getName());
+        distributor.setName(distributorDTO.getNameOfDistributorCompany());
         distributor.setPassword(distributorDTO.getPassword());
         distributor.setLogin(distributorDTO.getLogin());
         distributor.setActive(false);

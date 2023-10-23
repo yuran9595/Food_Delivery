@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class DistributorDTORequest extends UserDTORequest {
-    private String name;
+    private String nameOfDistributorCompany;
 
     public DistributorDTORequest(String login, String password) {
         super(login, password);

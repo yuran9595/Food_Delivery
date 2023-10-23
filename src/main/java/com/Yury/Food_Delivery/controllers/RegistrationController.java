@@ -46,6 +46,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/distributor")
+    @CrossOrigin("/http://localhost:3000")
     public ResponseEntity<?> distributorRegistration (@RequestBody @Valid DistributorDTORequest distributorDTO, BindingResult bindingResult){
         Map<String, String> errorMapForFront = new HashMap<>();
         validation(distributorDTO, bindingResult, errorMapForFront);

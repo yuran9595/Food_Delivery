@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserService {
     UserDTOResponse createUser(UserDTORequest userDTO);
 
-    List<User> userList();
+    List<UserDTOResponse> userList();
 
     UserDTOResponse setUserToActive (Long userId);
     UserDTOResponse setUserToInactive(Long userId);
