@@ -1,15 +1,13 @@
 package com.Yury.Food_Delivery.models;
 
-import com.Yury.Food_Delivery.enums.UserGender;
 import com.Yury.Food_Delivery.enums.UserRole;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.*;
 
 @Entity

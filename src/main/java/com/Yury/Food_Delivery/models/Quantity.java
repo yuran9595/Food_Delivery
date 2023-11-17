@@ -1,12 +1,11 @@
 package com.Yury.Food_Delivery.models;
 
 import com.Yury.Food_Delivery.enums.ReasonForAChangeOfProductQuantity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Entity
 @Getter

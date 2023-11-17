@@ -5,6 +5,7 @@ import com.Yury.Food_Delivery.dto.UserDTORequest;
 import com.Yury.Food_Delivery.services.Impl.DistributorServiceImpl;
 import com.Yury.Food_Delivery.services.Impl.UserServiceImpl;
 import com.Yury.Food_Delivery.validation.UserDTOValidation;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

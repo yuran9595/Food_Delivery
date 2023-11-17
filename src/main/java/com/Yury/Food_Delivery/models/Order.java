@@ -1,11 +1,9 @@
 package com.Yury.Food_Delivery.models;
 
 import com.Yury.Food_Delivery.enums.FormsOfPayments;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
