@@ -1,0 +1,73 @@
+body {
+    background-color: #9e4d4d; /* Серый фон */
+    color: #e2adad;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Общие стили для навигационного меню */
+nav {
+    background-color: #2d1b1b;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+li a:hover {
+    color: #ffd700;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #555;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #e65454;
+}
+
+/* Дополнительные стили для формы авторизации */
+/* Примените эти стили к форме авторизации в соответствии с вашим кодом */
+
+.form-container {
+    background-color: #c82c2c; /* Белый фон для контейнера формы */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Дополнительные стили для списка юзеров */
+/* Примените эти стили к списку юзеров в соответствии с вашим кодом */
+
+.user-list-container {
+    background-color: #cc2c2c; /* Белый фон для контейнера списка юзеров */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
