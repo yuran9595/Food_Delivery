@@ -22,22 +22,23 @@ import java.util.stream.Collectors;
 @RequestMapping("/registration")
 @RequiredArgsConstructor
 public class RegistrationController {
-   private final UserServiceImpl userService;
-   private final DistributorServiceImpl distributorService;
-   private final UserDTOValidation userDTOValidation;
+    private final UserServiceImpl userService;
+    private final DistributorServiceImpl distributorService;
+    private final UserDTOValidation userDTOValidation;
 
     @PostMapping("/user")
-    public ResponseEntity<?> userRegistration(@RequestBody @Valid UserDTORequest userDTO, BindingResult bindingResult){
+    public ResponseEntity<?> userRegistration(@RequestBody @Valid UserDTORequest userDTO, BindingResult bindingResult) {
         Map<String, String> errorMapForFront = new HashMap<>();
         validation(userDTO, bindingResult, errorMapForFront);
-        if (!errorMapForFront.isEmpty()){
+        if (!errorMapForFront.isEmpty()) {
             return new ResponseEntity<>(errorMapForFront, HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.ok(userService.createUser(userDTO));
     }
+
     private void validation(UserDTORequest userDTO, BindingResult bindingResult, Map<String, String> errorMapForFront) {
         userDTOValidation.validate(userDTO, bindingResult);
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             List<FieldError> fieldErrors = bindingResult.getFieldErrors();
             fieldErrors.stream()
                     .map(error -> errorMapForFront.put(error.getDefaultMessage(), error.getField()))
@@ -46,11 +47,11 @@ public class RegistrationController {
     }
 
     @PostMapping("/distributor")
-    @CrossOrigin("/http://localhost:3000")
-    public ResponseEntity<?> distributorRegistration (@RequestBody @Valid DistributorDTORequest distributorDTO, BindingResult bindingResult){
+    @CrossOrigin("http://localhost:3000")
+    public ResponseEntity<?> distributorRegistration(@RequestBody @Valid DistributorDTORequest distributorDTO, BindingResult bindingResult) {
         Map<String, String> errorMapForFront = new HashMap<>();
         validation(distributorDTO, bindingResult, errorMapForFront);
-        if (!errorMapForFront.isEmpty()){
+        if (!errorMapForFront.isEmpty()) {
             return new ResponseEntity<>(errorMapForFront, HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.ok(distributorService.createDistributor(distributorDTO));

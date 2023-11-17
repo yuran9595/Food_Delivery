@@ -25,12 +25,13 @@ public class AdminController {
     private final ProductCategoryServiceImpl categoryService;
     private final ProductSubCategoryServiceImpl productSubCategoryService;
     private final CategoryValidation categoryValidation;
-
     @PostMapping("/setUserToActive/{userId}")
+    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<UserDTOResponse> setUserToActive (@PathVariable Long userId){
        return ResponseEntity.ok(userService.setUserToActive(userId));
     }
     @PostMapping("/setUserToInactive/{userId}")
+    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<UserDTOResponse> setUserToInactive (@PathVariable Long userId){
         return ResponseEntity.ok(userService.setUserToInactive(userId));
     }
@@ -61,6 +62,4 @@ public class AdminController {
         }
         return new ResponseEntity<>("Category with such id is not found!", HttpStatus.BAD_REQUEST);
     }
-
-
 }

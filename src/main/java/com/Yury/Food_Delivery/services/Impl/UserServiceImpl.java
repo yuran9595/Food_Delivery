@@ -46,9 +46,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTOResponse setUserToActive(Long userId) {
         Optional<User> userById = userRepository.findById(userId);
-        if (userById.isPresent()){
+        if (userById.isPresent()) {
             User user = userById.get();
             user.setActive(true);
+            userRepository.save(user);
             return userToUserDTOTransformer.transform(user);
         }
         return null;
@@ -57,13 +58,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTOResponse setUserToInactive(Long userId) {
         Optional<User> userById = userRepository.findById(userId);
-        if (userById.isPresent()){
+        if (userById.isPresent()) {
             User user = userById.get();
             user.setActive(false);
+            userRepository.save(user);
             return userToUserDTOTransformer.transform(user);
         }
         return null;
     }
 
-
+    @Override
+    public UserDTOResponse getUserById(Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+            return userToUserDTOTransformer.transform(user.get());
+        }
+        return null;
+    }
 }

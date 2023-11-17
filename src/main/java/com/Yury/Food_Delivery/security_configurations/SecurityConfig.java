@@ -34,9 +34,9 @@ public class SecurityConfig {
         http.csrf().disable()
                 .cors().and()
                 .authorizeRequests()
-                .antMatchers( "/api/v1/**").authenticated()
+                .antMatchers("/api/v1/**").authenticated()
                 .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .antMatchers("/auth", "/registration/**","/swagger-ui/**").permitAll()
+                .antMatchers("/auth", "/registration/**", "/swagger-ui/**", "/api/v1/admin/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -65,6 +65,7 @@ public class SecurityConfig {
         authenticationProvider.setUserDetailsService(customUserDetailsService);
         return authenticationProvider;
     }
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
